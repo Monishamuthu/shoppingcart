@@ -9,6 +9,7 @@
     "@material-ui/icons": "4.5.1",
     "@material-ui/styles": "4.9.0",
     "hash-router": "0.4.0",
+    "materialize": "1.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-router-dom": "5.1.2",
