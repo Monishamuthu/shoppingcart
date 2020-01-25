@@ -5,9 +5,11 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
 const styles = theme => ({
   card: {
-    minWidth: 275
+    minWidth: 250
   }
 });
 class Home extends Component {
@@ -19,17 +21,26 @@ class Home extends Component {
     const { classes } = this.props;
     let itemList = this.props.items.map(item => {
       return (
-        <Card className={classes.card} variant="outlined">
-          <CardContent>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
-              {item.title}
-            </Typography>
-          </CardContent>
-        </Card>
+        <GridListTile>
+          <Card className={classes.card} variant="outlined">
+            <CardContent>
+              <Typography
+                className={classes.title}
+                color="textSecondary"
+                gutterBottom
+              >
+                {item.title}
+              </Typography>
+              <Typography
+                className={classes.title}
+                color="textSecondary"
+                gutterBottom
+              >
+                {item.desc}
+              </Typography>
+            </CardContent>
+          </Card>
+        </GridListTile>
       );
     });
 
@@ -44,8 +55,7 @@ class Home extends Component {
             flexWrap: "wrap"
           }}
         >
-          {" "}
-          {itemList}
+          <GridList cols={2}>{itemList}</GridList>
         </div>
       </Container>
       /*  </React.Fragment> */
